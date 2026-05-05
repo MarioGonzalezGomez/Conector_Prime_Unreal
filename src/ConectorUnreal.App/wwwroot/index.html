@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conector Unreal Control Panel</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="layout">
+    <section class="card">
+      <h1>Conector Unreal</h1>
+      <p class="subtitle">TCP input + Manual control to Unreal Remote Control API</p>
+      <div id="status" class="status-grid"></div>
+      <button id="reconnectBtn" class="secondary">Reconnect Unreal WebSocket</button>
+    </section>
+
+    <section class="card">
+      <h2>Manual signal panel</h2>
+      <div id="buttons" class="buttons"></div>
+      <form id="manualForm" class="manual-form">
+        <input id="signalInput" type="text" placeholder="Write signal (example: P_Directo)" />
+        <button type="submit">Send signal</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="toolbar">
+        <h2>Signal monitor</h2>
+        <button id="refreshBtn" class="secondary">Refresh</button>
+      </div>
+      <div id="events" class="events"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

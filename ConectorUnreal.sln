@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{93E61DE4-6192-401B-A1CC-3875C5985384}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConectorUnreal.App", "src\ConectorUnreal.App\ConectorUnreal.App.csproj", "{0CCC7FDB-FE90-453F-A2E1-B4237BB7A74A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConectorUnreal.Core", "src\ConectorUnreal.Core\ConectorUnreal.Core.csproj", "{59D1BE1C-096D-4C24-B720-F1D35FC0A950}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConectorUnreal.Infrastructure", "src\ConectorUnreal.Infrastructure\ConectorUnreal.Infrastructure.csproj", "{F9A4CD04-B017-4CC6-B0A6-8A3078B64A11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A8BC7F19-7700-4E3E-BAA7-3EB47831C65B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConectorUnreal.Tests", "tests\ConectorUnreal.Tests\ConectorUnreal.Tests.csproj", "{EEF64570-EDE5-4D49-BA19-BB117C1B2989}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0CCC7FDB-FE90-453F-A2E1-B4237BB7A74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CCC7FDB-FE90-453F-A2E1-B4237BB7A74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CCC7FDB-FE90-453F-A2E1-B4237BB7A74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CCC7FDB-FE90-453F-A2E1-B4237BB7A74A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D1BE1C-096D-4C24-B720-F1D35FC0A950}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D1BE1C-096D-4C24-B720-F1D35FC0A950}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D1BE1C-096D-4C24-B720-F1D35FC0A950}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D1BE1C-096D-4C24-B720-F1D35FC0A950}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9A4CD04-B017-4CC6-B0A6-8A3078B64A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9A4CD04-B017-4CC6-B0A6-8A3078B64A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9A4CD04-B017-4CC6-B0A6-8A3078B64A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9A4CD04-B017-4CC6-B0A6-8A3078B64A11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEF64570-EDE5-4D49-BA19-BB117C1B2989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF64570-EDE5-4D49-BA19-BB117C1B2989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF64570-EDE5-4D49-BA19-BB117C1B2989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF64570-EDE5-4D49-BA19-BB117C1B2989}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0CCC7FDB-FE90-453F-A2E1-B4237BB7A74A} = {93E61DE4-6192-401B-A1CC-3875C5985384}
+		{59D1BE1C-096D-4C24-B720-F1D35FC0A950} = {93E61DE4-6192-401B-A1CC-3875C5985384}
+		{F9A4CD04-B017-4CC6-B0A6-8A3078B64A11} = {93E61DE4-6192-401B-A1CC-3875C5985384}
+		{EEF64570-EDE5-4D49-BA19-BB117C1B2989} = {A8BC7F19-7700-4E3E-BAA7-3EB47831C65B}
+	EndGlobalSection
+EndGlobal

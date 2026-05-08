@@ -14,11 +14,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<TcpListenerOptions>(builder.Configuration.GetSection("TcpListener"));
 builder.Services.Configure<CommandMapOptions>(builder.Configuration.GetSection("CommandMap"));
 builder.Services.Configure<SignalStoreOptions>(builder.Configuration.GetSection("SignalStore"));
-builder.Services.Configure<UnrealWebSocketOptions>(builder.Configuration.GetSection("UnrealWebSocket"));
+builder.Services.Configure<UnrealRemoteControlOptions>(builder.Configuration.GetSection("UnrealRemoteControl"));
 
 builder.Services.AddSingleton<ICommandMapper, DictionaryCommandMapper>();
 builder.Services.AddSingleton<IUnrealPayloadFactory, DefaultUnrealPayloadFactory>();
-builder.Services.AddSingleton<IUnrealRemoteControlClient, UnrealWebSocketClient>();
+builder.Services.AddHttpClient<IUnrealRemoteControlClient, UnrealRemoteControlHttpClient>();
 
 builder.Services.AddSingleton<ISignalEventStore>(sp =>
 {

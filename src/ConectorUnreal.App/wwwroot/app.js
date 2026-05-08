@@ -30,7 +30,7 @@ async function postJson(url, body) {
 function renderStatus(health, metrics) {
   const rows = [
     { label: "TCP listener", value: health.tcpListening ? "Running" : "Stopped" },
-    { label: "Unreal WebSocket", value: health.unrealConnected ? "Connected" : "Disconnected" },
+    { label: "Unreal Endpoint", value: health.unrealConnected ? "Connected" : "Disconnected" },
     { label: "Total events", value: metrics.totalEvents },
     { label: "Received", value: metrics.receivedSignals },
     { label: "Sent", value: metrics.sentSignals },

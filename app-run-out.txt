@@ -1,0 +1,45 @@
+Compilando...
+info: ConectorUnreal.App.Services.TcpSignalListenerService[0]
+      TCP listener started on 0.0.0.0:8383
+warn: Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware[16]
+      The WebRootPath was not found: D:\TrabajosPrime\Programacion\Conector_Prime_Unreal\wwwroot. Static files may be unavailable.
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:5078
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\TrabajosPrime\Programacion\Conector_Prime_Unreal
+info: System.Net.Http.HttpClient.IUnrealRemoteControlClient.LogicalHandler[100]
+      Start processing HTTP request PUT http://127.0.0.1:30010/remote/preset/RCP_RA/property/REPLACE_WITH_PROPERTY_ID
+info: System.Net.Http.HttpClient.IUnrealRemoteControlClient.ClientHandler[100]
+      Sending HTTP request PUT http://127.0.0.1:30010/remote/preset/RCP_RA/property/REPLACE_WITH_PROPERTY_ID
+info: System.Net.Http.HttpClient.IUnrealRemoteControlClient.ClientHandler[101]
+      Received HTTP response headers after 29.6419ms - 404
+info: System.Net.Http.HttpClient.IUnrealRemoteControlClient.LogicalHandler[101]
+      End processing HTTP request after 36.3136ms - 404
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:5078/api/events?take=20 - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: GET /api/events'
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[1]
+      Setting HTTP status code 200.
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[3]
+      Writing value of type 'List`1' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: GET /api/events'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:5078/api/events?take=20 - 200 - application/json;+charset=utf-8 63.8104ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:5078/api/health - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: GET /api/health'
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[1]
+      Setting HTTP status code 200.
+info: Microsoft.AspNetCore.Http.Result.OkObjectResult[3]
+      Writing value of type '<>f__AnonymousType0`3' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: GET /api/health'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:5078/api/health - 200 - application/json;+charset=utf-8 3.2910ms

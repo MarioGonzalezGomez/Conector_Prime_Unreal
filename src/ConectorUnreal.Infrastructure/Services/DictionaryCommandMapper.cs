@@ -13,6 +13,10 @@ public sealed class DictionaryCommandMapper : ICommandMapper
         "^CHP_Posicion_X_(-?\\d+(?:[\\.,]\\d+)?)$",
         RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
 
+    private static readonly Regex TextSignalRegex = new(
+        "^CHG_TxtSumario_(.+)$",
+        RegexOptions.Compiled | RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
+
     private readonly Dictionary<string, string> _mappings;
 
     public DictionaryCommandMapper(IOptions<CommandMapOptions> options)
@@ -62,6 +66,15 @@ public sealed class DictionaryCommandMapper : ICommandMapper
         if (_mappings.TryGetValue(normalizedSignal, out var actionName))
         {
             command = new MappedCommand(normalizedSignal, actionName);
+            error = null;
+            return true;
+        }
+
+        var textMatch = TextSignalRegex.Match(normalizedSignal);
+        if (textMatch.Success)
+        {
+            var textValue = textMatch.Groups[1].Value;
+            command = new MappedCommand(normalizedSignal, $"SetTextValue:{textValue}");
             error = null;
             return true;
         }

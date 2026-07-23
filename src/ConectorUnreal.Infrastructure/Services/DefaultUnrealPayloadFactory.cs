@@ -10,6 +10,7 @@ namespace ConectorUnreal.Infrastructure.Services;
 public sealed class DefaultUnrealPayloadFactory : IUnrealPayloadFactory
 {
     private const string SetPositionXPrefix = "SetPositionX:";
+    private const string SetTextValuePrefix = "SetTextValue:";
     private readonly UnrealRemoteControlOptions _options;
 
     public DefaultUnrealPayloadFactory(IOptions<UnrealRemoteControlOptions> options)
@@ -29,6 +30,7 @@ public sealed class DefaultUnrealPayloadFactory : IUnrealPayloadFactory
 
             var payload = new
             {
+                TargetEndpoint = "Property",
                 PropertyValue = new
                 {
                     X = xValue,
@@ -41,8 +43,22 @@ public sealed class DefaultUnrealPayloadFactory : IUnrealPayloadFactory
             return JsonSerializer.Serialize(payload);
         }
 
+        if (command.ActionName.StartsWith(SetTextValuePrefix, StringComparison.Ordinal))
+        {
+            var textValue = command.ActionName[SetTextValuePrefix.Length..];
+            var payload = new
+            {
+                TargetEndpoint = "Property",
+                PropertyValue = textValue,
+                GenerateTransaction = _options.GenerateTransaction
+            };
+
+            return JsonSerializer.Serialize(payload);
+        }
+
         var fallbackPayload = new
         {
+            TargetEndpoint = "Action",
             Signal = command.Signal,
             Action = command.ActionName,
             SentAtUtc = DateTimeOffset.UtcNow

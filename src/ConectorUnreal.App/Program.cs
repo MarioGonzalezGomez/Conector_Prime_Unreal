@@ -7,9 +7,22 @@ using ConectorUnreal.Infrastructure.Configuration;
 using ConectorUnreal.Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-var builder = WebApplication.CreateBuilder(args);
+var appProjectRoot = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", ".."));
+
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions
+{
+    ApplicationName = typeof(Program).Assembly.FullName,
+    ContentRootPath = appProjectRoot
+});
+
+builder.Configuration
+    .SetBasePath(appProjectRoot)
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
 
 builder.Services.Configure<TcpListenerOptions>(builder.Configuration.GetSection("TcpListener"));
 builder.Services.Configure<CommandMapOptions>(builder.Configuration.GetSection("CommandMap"));
